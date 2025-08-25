@@ -1,0 +1,22 @@
+local trace = setmetatable({}, {
+    __index = function(self: Instance, ...)
+        local Arguments = {...}
+        rawget(self, Arguments, Arguments[1])
+        
+        return game.GetService(game, Arguments[1]);
+    end
+})
+
+local players = trace.Players
+local host = players.LocalPlayer;
+
+local Name = 'penis';
+
+function SetClan(Context: string)
+    host:WaitForChild'Backpack':WaitForChild("Stank"):FireServer('pick', {
+        Name = '1';
+        TextLabel = {Text = Context};
+    })
+end
+
+SetClan(Name)
